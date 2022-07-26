@@ -34,3 +34,4 @@ build/
 .DS_Store
 .mvn**
 mvnw**
+/src/main/resources/firebase_config.json
