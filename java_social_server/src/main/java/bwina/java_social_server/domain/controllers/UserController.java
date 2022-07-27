@@ -1,6 +1,6 @@
-package bwina.java_social_server.domain.users.controller;
+package bwina.java_social_server.domain.controllers;
 
-import bwina.java_social_server.domain.users.service.UserService;
+import bwina.java_social_server.domain.services.interfaces.UserService;
 import bwina.java_social_server.security.models.FireBaseUser;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
