@@ -30,7 +30,6 @@ public class Profile {
 
     @OneToOne(targetEntity = UserDetails.class, cascade = CascadeType.ALL)
     @JoinColumn(name = "detail_id", referencedColumnName = "id")
-    @NonNull
     private UserDetails userDetails;
 
 //    @OneToMany(cascade = CascadeType.ALL)
