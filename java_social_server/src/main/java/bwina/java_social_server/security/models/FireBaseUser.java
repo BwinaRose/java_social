@@ -1,5 +1,6 @@
 package bwina.java_social_server.security.models;
 
+
 public class FireBaseUser {
     private static final long serialVersionUID = 4408418647685225829L;
     private String uid;

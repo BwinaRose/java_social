@@ -26,6 +26,17 @@ public class ProfileServiceImpl implements ProfileService {
     }
 
     @Override
+    public Profile getByUserName(String userName) throws ResourceNotFoundException {
+        return profileRepo.findByUserName(userName)
+                .orElseThrow(()-> new ResourceNotFoundException("No profile with username:" + userName));
+    }
+
+    @Override
+    public List<Profile> getAllProfiles() {
+        return profileRepo.findAll();
+    }
+
+    @Override
     public List<Profile> getAllFollowers() {
         return null;
     }
@@ -44,14 +55,14 @@ public class ProfileServiceImpl implements ProfileService {
     }
 
     @Override
-    public Profile update(Long id, Profile profile) throws ResourceNotFoundException {
+    public void update(Long id, Profile profileDetails) throws ResourceNotFoundException {
         Profile savedProfile = getById(id);
-        savedProfile.setFirstName(profile.getFirstName());
-        savedProfile.setLastName(profile.getLastName());
-        savedProfile.setEmail(profile.getEmail());
-        savedProfile.setPassword(profile.getPassword());
-        savedProfile.setUserDetails(profile.getUserDetails());
-        return profileRepo.save(profile);
+        savedProfile.setId((id));
+        savedProfile.setUserName(profileDetails.getUserName());
+        savedProfile.setFirstName(profileDetails.getFirstName());
+        savedProfile.setLastName(profileDetails.getLastName());
+        savedProfile.setUserDetails(profileDetails.getUserDetails());
+        profileRepo.save(savedProfile);
     }
 
     @Override

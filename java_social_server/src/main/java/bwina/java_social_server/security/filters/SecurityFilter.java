@@ -86,10 +86,10 @@ public class SecurityFilter extends OncePerRequestFilter {
         if (decodedToken != null) {
             user = new FireBaseUser();
             user.setUid(decodedToken.getUid());
-            user.setName(decodedToken.getName());
+            //user.setName(decodedToken.getName());
             user.setEmail(decodedToken.getEmail());
-            user.setPicture(decodedToken.getPicture());
-            user.setIssuer(decodedToken.getIssuer());
+            //user.setPicture(decodedToken.getPicture());
+            //user.setIssuer(decodedToken.getIssuer());
             user.setEmailVerified(decodedToken.isEmailVerified());
         }
         return user;
